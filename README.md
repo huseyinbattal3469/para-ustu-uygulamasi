@@ -1,67 +1,56 @@
-Here's a `README.md` file for your project:
-
-```markdown
 # Para Üstü Uygulaması
 
-This is a simple C# console application developed as a homework project for Balıkesir University. The project simulates an ATM cash withdrawal system, allowing users to withdraw money in various denominations.
+This is a C# console application developed as a homework project for Balıkesir University. The program simulates an ATM machine, allowing users to withdraw specific amounts of money using available denominations.
+
+## How It Works
+
+1. **ATM Setup:**  
+   The application first asks the user to load the ATM with cash in denominations of 200, 100, 50, 20, 10, 5, and 1 TL. The user is prompted to input the number of notes or coins for each denomination.
+
+2. **Money Withdrawal:**
+   - The user is then asked to enter the amount of money they wish to withdraw.
+   - The application calculates and dispenses the money using the available denominations.
+   - If the requested amount exceeds the total cash available in the ATM, the user is notified, and the transaction is canceled.
+   - The user is given the option to either make another withdrawal or exit the application.
+
+3. **Denomination Availability Check:**
+   - During the withdrawal process, if there aren't enough notes in a particular denomination to fulfill the request, the transaction is canceled and the user is notified of the shortfall.
 
 ## Features
 
-- **Denomination Input**: The user is prompted to input the number of banknotes for each denomination (200 TL, 100 TL, 50 TL, 20 TL, 10 TL, 5 TL, and 1 TL) at the start of the application.
-- **Cash Withdrawal**: The user can withdraw a specified amount of money, and the application will calculate and output the number of banknotes in each denomination provided.
-- **Error Handling**: The application handles scenarios where the user inputs invalid amounts or requests more money than is available in the ATM.
-- **Retry Option**: After each transaction, the user can choose to perform another transaction or exit the application.
+- Handles all common denominations of Turkish Lira.
+- Validates user input for correct and realistic scenarios.
+- Displays detailed information about the transaction, including the number of notes dispensed.
+- Provides the option to withdraw more money or exit the program after each transaction.
 
-## Getting Started
+## Usage
 
-### Prerequisites
+1. Run the program.
+2. Load the ATM with cash by entering the quantity for each denomination.
+3. Enter the amount you wish to withdraw.
+4. Follow the on-screen instructions to complete or cancel the transaction.
 
-- [.NET SDK](https://dotnet.microsoft.com/download) installed on your machine.
+## Example
 
-### Running the Application
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/huseyinbattal3469/para_ustu_uygulamasi.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd para_ustu_uygulamasi
-   ```
-3. Run the application:
-   ```bash
-   dotnet run
-   ```
-
-### Usage
-
-- When the application starts, you will be prompted to enter the number of banknotes for each denomination.
-- After setting up the ATM, you can enter the amount you wish to withdraw.
-- The application will display the number of banknotes for each denomination.
-- You can choose to either withdraw another amount or exit the application.
-
-### Sample Output
+Here's an example of a session:
 
 ```
 Para Uygulaması'na hoş geldin! Uygulamaya başlamadan önce ATM'ye günlük nakit koymamız gerekiyor.
 200,100,50,20,10,5 ve 1 TL'lik banknot/madeni paraların yerleştirilmesi gerekiyor.
 ATM'ye yerleştirilecek 200 TL'nin adetini giriniz: 10
 ...
-Lütfen çekmek istediğiniz tutarı giriniz: 450
-Bankadan çekmek istediğiniz tutar: 450TL.
+Lütfen çekmek istediğiniz tutarı giriniz.
+Paranız 1TL'lik bozuk para ve 5TL, 10TL, 20TL, 50TL, 100TL, 200TL'lik banknotlarla teslim edilecektir: 360
+Bankadan çekmek istediğiniz tutar: 360 TL.
 Çekme işlemi tamamlandı. Paranız;
-2 adet 200TL,
-1 adet 50TL,
+1 adet 200 TL,
+1 adet 100 TL,
+1 adet 50 TL,
+1 adet 10 TL,
 şeklinde teslim edilmiştir. Kartınızı geri almayı unutmayın.
 ```
 
-## License
+## Notes
 
-This project is licensed under the MIT License.
-
-## Acknowledgements
-
-This project was created as part of a homework assignment for Balıkesir University. Special thanks to the course instructors and peers who provided feedback and support.
-```
-
-Feel free to customize it further to fit your specific needs!
+- Make sure the total amount you wish to withdraw does not exceed the amount available in the ATM.
+- The application only accepts positive integers as input for withdrawal amounts.
